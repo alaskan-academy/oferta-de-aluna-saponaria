@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Handify™ — Curso Vendas no Artesanato na Prática</title>
+<link rel="icon" href="assets/icon-gradiente-grande.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --handify-blue: #6699F3;
+    --handify-green: #72CF92;
+    --handify-yellow: #FEC649;
+    --handify-black: #0F0F0F;
+    --handify-gray-dark: #2D2D2D;
+    --handify-off-white: #F5F5F0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: var(--handify-gray-dark);
+    background: #ffffff;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { text-decoration: none; }
+
+  .brand-stripe {
+    display: flex;
+    height: 6px;
+    width: 100%;
+  }
+  .brand-stripe span { flex: 1; }
+  .brand-stripe span:nth-child(1) { background: var(--handify-blue); }
+  .brand-stripe span:nth-child(2) { background: var(--handify-green); }
+  .brand-stripe span:nth-child(3) { background: var(--handify-yellow); }
+
+  header {
+    padding: 24px 20px;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+  }
+  header img { height: 36px; }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 24px 0 8px;
+  }
+  .hero .eyebrow {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--handify-blue);
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 1.3;
+    color: var(--handify-black);
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 17px;
+    color: var(--handify-gray-dark);
+    margin-bottom: 8px;
+  }
+  .hero .highlight {
+    color: var(--handify-blue);
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(0,0,0,0.08);
+    margin: 32px 0;
+  }
+
+  .story p {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .course-title {
+    text-align: center;
+    padding: 8px 0 20px;
+  }
+  .course-title .label {
+    display: inline-block;
+    background: var(--handify-off-white);
+    color: var(--handify-blue);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .course-title h2 {
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--handify-black);
+    margin-bottom: 12px;
+  }
+  .course-title p {
+    font-size: 16px;
+    color: var(--handify-gray-dark);
+  }
+
+  .section-heading {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--handify-black);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    background: var(--handify-off-white);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .checklist li .check {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--handify-green);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .card-block {
+    background: var(--handify-off-white);
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin: 32px 0;
+  }
+  .card-block .section-heading { text-align: left; }
+
+  .why-now {
+    text-align: center;
+    padding: 8px 0;
+  }
+  .why-now p {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+  .why-now .urgency {
+    font-weight: 700;
+    color: var(--handify-black);
+  }
+
+  .offer {
+    background: var(--handify-black);
+    border-radius: 20px;
+    padding: 36px 24px;
+    text-align: center;
+    color: #fff;
+    margin: 32px 0;
+  }
+  .offer .label {
+    display: inline-block;
+    background: var(--handify-blue);
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .offer h2 {
+    font-weight: 900;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  .offer .price-old {
+    font-size: 18px;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+  .offer .price-new-label {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 4px;
+  }
+  .offer .price-new {
+    font-weight: 900;
+    font-size: 48px;
+    color: var(--handify-green);
+    line-height: 1.1;
+  }
+  .offer .price-installments {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 24px;
+    margin-top: 6px;
+  }
+
+  .offer-features {
+    list-style: none;
+    text-align: left;
+    max-width: 340px;
+    margin: 0 auto 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .offer-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #eee;
+  }
+  .offer-features li .check {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--handify-green);
+    color: #0F0F0F;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-btn {
+    display: block;
+    width: 100%;
+    background: var(--handify-blue);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    padding: 18px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+    box-shadow: 0 4px 14px rgba(102,153,243,0.35);
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(102,153,243,0.45);
+  }
+  .cta-btn.secondary {
+    background: var(--handify-green);
+    box-shadow: 0 4px 14px rgba(114,207,146,0.35);
+  }
+  .cta-btn.secondary:hover {
+    box-shadow: 0 6px 18px rgba(114,207,146,0.45);
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 18px 0 26px;
+  }
+  .countdown .box {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 10px 12px;
+    min-width: 58px;
+    text-align: center;
+  }
+  .countdown .box .num {
+    font-weight: 900;
+    font-size: 22px;
+    color: #fff;
+    display: block;
+    line-height: 1;
+  }
+  .countdown .box .lbl {
+    font-size: 10px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .no-action {
+    padding: 8px 0 4px;
+    text-align: center;
+  }
+  .no-action p {
+    font-size: 15px;
+    margin-bottom: 14px;
+    color: var(--handify-gray-dark);
+  }
+  .no-action .cta-btn { margin-top: 12px; }
+
+  .trust {
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+    padding: 24px 0 10px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 20px 40px;
+  }
+  footer img {
+    height: 24px;
+    opacity: 0.6;
+  }
+
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    z-index: 50;
+    display: none;
+  }
+  .sticky-cta.visible { display: block; }
+  .sticky-cta .cta-btn { font-size: 15px; padding: 15px 16px; }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 25px; }
+    .offer .price-new { font-size: 40px; }
+    .course-title h2 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="brand-stripe"><span></span><span></span><span></span></div>
+
+  <header>
+    <img src="assets/logo-horizontal-large.png" alt="Handify™">
+  </header>
+
+  <main class="wrap">
+
+    <section class="hero">
+      <div class="eyebrow">Antes de acessar suas aulas…</div>
+      <h1>Você acabou de aprender o primeiro passo: <span class="highlight">fazer sabonetes.</span></h1>
+      <p>Agora falta o passo que transforma isso em <strong>renda:</strong></p>
+      <p style="font-weight:900; font-size:22px; color:var(--handify-black);">aprender a vender.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="story">
+      <p>Muitas alunas começam empolgadas, fazem os primeiros sabonetes, mostram para a família, recebem elogios…</p>
+      <p>Mas travam na hora de cobrar, divulgar, montar catálogo e fechar as primeiras encomendas.</p>
+      <p>E é exatamente para isso que existe o:</p>
+    </section>
+
+    <section class="course-title">
+      <div class="label">Novo curso</div>
+      <h2>Curso Vendas no Artesanato na Prática</h2>
+      <p>Um treinamento simples e direto para você aprender como transformar seus produtos artesanais em vendas reais.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+      <h3 class="section-heading">O que você vai aprender</h3>
+      <ul class="checklist">
+        <li><span class="check">✓</span> Como atrair clientes para seus produtos artesanais</li>
+        <li><span class="check">✓</span> Como apresentar seus sabonetes de forma mais profissional</li>
+        <li><span class="check">✓</span> Como montar um catálogo simples para mostrar suas opções</li>
+        <li><span class="check">✓</span> Como falar com clientes pelo WhatsApp sem parecer insistente</li>
+        <li><span class="check">✓</span> Como valorizar seu trabalho e cobrar com mais segurança</li>
+        <li><span class="check">✓</span> Como usar gatilhos de venda de forma simples</li>
+        <li><span class="check">✓</span> Como fidelizar clientes para comprarem novamente</li>
+        <li><span class="check">✓</span> Como fazer pós-venda e gerar novas encomendas</li>
+      </ul>
+    </section>
+
+    <div class="card-block">
+      <h3 class="section-heading">Esse curso é para você se…</h3>
+      <ul class="checklist">
+        <li><span class="check">✓</span> Você quer vender os sabonetes que acabou de aprender a fazer</li>
+        <li><span class="check">✓</span> Você tem medo de cobrar errado</li>
+        <li><span class="check">✓</span> Você não sabe como divulgar</li>
+        <li><span class="check">✓</span> Você sente vergonha de oferecer</li>
+        <li><span class="check">✓</span> Você quer transformar artesanato em renda extra</li>
+        <li><span class="check">✓</span> Você quer parar de depender só de amigas e familiares comprando</li>
+      </ul>
+    </div>
+
+    <section class="why-now">
+      <h3 class="section-heading">Por que essa oferta aparece agora?</h3>
+      <p>Porque você acabou de entrar no <strong>Saponaria Brasil.</strong></p>
+      <p>Esse é o melhor momento para aprender não só a produzir, mas também como transformar essa produção em vendas.</p>
+      <p class="urgency">Por isso, essa condição especial fica disponível apenas nas próximas 24 horas para novas alunas.</p>
+    </section>
+
+    <section class="offer" id="oferta">
+      <div class="label">Oferta exclusiva para novas alunas</div>
+      <h2>Curso Vendas no Artesanato na Prática</h2>
+
+      <div class="countdown" id="countdown">
+        <div class="box"><span class="num" id="cd-h">24</span><span class="lbl">horas</span></div>
+        <div class="box"><span class="num" id="cd-m">00</span><span class="lbl">min</span></div>
+        <div class="box"><span class="num" id="cd-s">00</span><span class="lbl">seg</span></div>
+      </div>
+
+      <div class="price-old">De R$67</div>
+      <div class="price-new-label">Por apenas</div>
+      <div class="price-new">R$27</div>
+      <div class="price-installments">ou 3x de R$9,00</div>
+
+      <ul class="offer-features">
+        <li><span class="check">✓</span> Acesso imediato</li>
+        <li><span class="check">✓</span> Curso em vídeo</li>
+        <li><span class="check">✓</span> Aulas rápidas e práticas</li>
+        <li><span class="check">✓</span> Acesso vitalício</li>
+        <li><span class="check">✓</span> Garantia de 7 dias</li>
+      </ul>
+
+      <a href="#" class="cta-btn">SIM, QUERO APRENDER A VENDER MEUS SABONETES</a>
+    </section>
+
+    <section class="no-action">
+      <h3 class="section-heading">O que acontece se eu não aproveitar agora?</h3>
+      <p>Você continua com seu acesso ao Saponaria Brasil normalmente.</p>
+      <p>Mas essa condição especial do curso de vendas deixa de estar disponível depois de 24 horas.</p>
+      <p>Depois, o curso volta ao valor normal.</p>
+      <a href="#oferta" class="cta-btn secondary">QUERO APROVEITAR A OFERTA DE 24 HORAS</a>
+    </section>
+
+    <p class="trust">🔒 Pagamento 100% seguro · Acesso imediato · 7 dias de garantia</p>
+
+  </main>
+
+  <footer>
+    <img src="assets/logo-horizontal-footer.png" alt="Handify™ · Todos os direitos reservados">
+  </footer>
+
+  <div class="sticky-cta" id="sticky-cta">
+    <a href="#oferta" class="cta-btn">SIM, QUERO APRENDER A VENDER</a>
+  </div>
+
+  <script>
+    (function () {
+      var DEADLINE_KEY = 'handify_oferta_vendas_deadline';
+      var duration = 24 * 60 * 60 * 1000;
+      var deadline = localStorage.getItem(DEADLINE_KEY);
+      if (!deadline || isNaN(Number(deadline)) || Number(deadline) < Date.now()) {
+        deadline = Date.now() + duration;
+        localStorage.setItem(DEADLINE_KEY, deadline);
+      } else {
+        deadline = Number(deadline);
+      }
+
+      var elH = document.getElementById('cd-h');
+      var elM = document.getElementById('cd-m');
+      var elS = document.getElementById('cd-s');
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+
+      function tick() {
+        var diff = deadline - Date.now();
+        if (diff <= 0) {
+          elH.textContent = '00';
+          elM.textContent = '00';
+          elS.textContent = '00';
+          return;
+        }
+        var h = Math.floor(diff / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        elH.textContent = pad(h);
+        elM.textContent = pad(m);
+        elS.textContent = pad(s);
+      }
+      tick();
+      setInterval(tick, 1000);
+
+      var stickyCta = document.getElementById('sticky-cta');
+      var offerSection = document.getElementById('oferta');
+      window.addEventListener('scroll', function () {
+        var rect = offerSection.getBoundingClientRect();
+        var offerVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        var pastHero = window.scrollY > 400;
+        stickyCta.classList.toggle('visible', pastHero && !offerVisible);
+      });
+    })();
+  </script>
+
+</body>
+</html>
